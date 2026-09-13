@@ -1,6 +1,6 @@
 
-let balance = 15000;
-let correctPin = 5678;
+let balance = 10000;
+let correctPin = 1234;
 
 function showMoney() {
 

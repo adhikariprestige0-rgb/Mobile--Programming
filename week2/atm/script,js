@@ -1,0 +1,61 @@
+
+let balance = 15000;
+let correctPin = 5678;
+
+function showMoney() {
+
+    let enteredPin = document.getElementById("userPin").value;
+    let display = document.getElementById("message");
+
+    if (enteredPin == correctPin) {
+        display.innerHTML = "Your balance is Rs. " + balance;
+    } 
+    else {
+        display.innerHTML = "Invalid PIN";
+    }
+}
+
+
+function takeMoney() {
+
+    let enteredPin = document.getElementById("userPin").value;
+    let cashAmount = Number(document.getElementById("cash").value);
+    let display = document.getElementById("message");
+
+    if (enteredPin != correctPin) {
+        display.innerHTML = "Invalid PIN";
+        return;
+    }
+
+    if (cashAmount <= 0) {
+        display.innerHTML = "Enter a valid amount";
+    }
+    else if (cashAmount > balance) {
+        display.innerHTML = "Insufficient balance";
+    }
+    else {
+        balance -= cashAmount;
+        display.innerHTML = "Please collect your cash. Remaining balance: Rs. " + balance;
+    }
+}
+
+
+function addMoney() {
+
+    let enteredPin = document.getElementById("userPin").value;
+    let cashAmount = Number(document.getElementById("cash").value);
+    let display = document.getElementById("message");
+
+    if (enteredPin != correctPin) {
+        display.innerHTML = "Invalid PIN";
+        return;
+    }
+
+    if (cashAmount <= 0) {
+        display.innerHTML = "Enter a valid amount";
+    }
+    else {
+        balance += cashAmount;
+        display.innerHTML = "Money deposited. New balance: Rs. " + balance;
+    }
+}
